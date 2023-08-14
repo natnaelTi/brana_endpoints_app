@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include brana_endpoints_app *.css
+recursive-include brana_endpoints_app *.csv
+recursive-include brana_endpoints_app *.html
+recursive-include brana_endpoints_app *.ico
+recursive-include brana_endpoints_app *.js
+recursive-include brana_endpoints_app *.json
+recursive-include brana_endpoints_app *.md
+recursive-include brana_endpoints_app *.png
+recursive-include brana_endpoints_app *.py
+recursive-include brana_endpoints_app *.svg
+recursive-include brana_endpoints_app *.txt
+recursive-exclude brana_endpoints_app *.pyc

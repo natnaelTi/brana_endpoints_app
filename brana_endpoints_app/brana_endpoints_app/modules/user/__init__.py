@@ -3,7 +3,8 @@
 from .user import User
 from .user.user_profile import UserProfile
 from .user.user_favorite import UserFavorite
+from .user.customer import Customer
 
 
-__all__ = ["User", "UserProfile", "UserFavorite"]
+__all__ = ["User", "UserProfile", "UserFavorite", "Customer"]
 

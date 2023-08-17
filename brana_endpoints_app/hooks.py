@@ -215,3 +215,14 @@ app_license = "MIT"
 # auth_hooks = [
 #	"brana_endpoints_app.auth.validate"
 # ]
+
+# brana_endpoints_app/brana_endpoints_app/hooks.py
+from .modules.user.user_api import login, logout
+
+def get_url_patterns():
+    url_patterns = [
+        # Other URL patterns
+        ("/api/method/brana_endpoints_app.modules.user.user_api.login", login),
+        ("/api/method/brana_endpoints_app.modules.user.user_api.logout", logout),
+    ]
+    return url_patterns

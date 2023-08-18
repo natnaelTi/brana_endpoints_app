@@ -1,4 +1,3 @@
-
 # brana_endpoints_app/brana_endpoints_app/modules/user/user.py
 from frappe import _
 import frappe
@@ -100,4 +99,3 @@ class User(Document):
         self.meta.get_field("creation_date").fieldtype = "Datetime"
 
         self.meta.get_field("last_modified").label = _("Last Modified")
-

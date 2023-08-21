@@ -8,33 +8,33 @@ class SubscriptionLevel(Document):
         super(SubscriptionLevel, self).__init__(*args, **kwargs)
         self.setup_fields()
 
-    def send_notification_email(user, remaining_days):
-        email_domain = frappe.get_value("Email Domain", None, "domain_name")
-        sender = frappe.session.user
-        recipient = frappe.get_value("User", user, "email_id")
-        subject = "Subscription Level Change Notification"
-        message = "Your subscription level has been updated. You have {} days remaining in your current subscription plan.".format(remaining_days)
+def send_notification_email(user, remaining_days):
+    email_domain = frappe.get_value("Email Domain", None, "domain_name")
+    sender = frappe.session.user
+    recipient = frappe.get_value("User", user, "email_id")
+    subject = "Subscription Level Change Notification"
+    message = "Your subscription level has been updated. You have {} days remaining in your current subscription plan.".format(remaining_days)
 
-        frappe.sendmail(
-            recipients=recipient,
-            sender=sender,
-            subject=subject,
-            message=message,
-            delayed=False,
-            retry=False,
-            email_id=None,
-            reference_doctype=None,
-            reference_name=None,
-            unsubscribe_message=False,
-            unsubscribe_option=False,
-            inline_images=[],
-            header=[],
-            print_letterhead=False,
-            communication=None,
-            now=False,
-            email_account=None,
-            email_domain=email_domain
-        )
+    frappe.sendmail(
+        recipients=recipient,
+        sender=sender,
+        subject=subject,
+        message=message,
+        delayed=False,
+        retry=False,
+        email_id=None,
+        reference_doctype=None,
+        reference_name=None,
+        unsubscribe_message=False,
+        unsubscribe_option=False,
+        inline_images=[],
+        header=[],
+        print_letterhead=False,
+        communication=None,
+        now=False,
+        email_account=None,
+        email_domain=email_domain
+    )
 
     def validate(self):
         # Check if all fields have values
